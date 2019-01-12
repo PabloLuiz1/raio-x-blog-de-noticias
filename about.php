@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>BlogDeNoticias | Início</title>
+        <title>BlogDeNoticias | Sobre</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -22,9 +22,9 @@
             </figure>
             <h2 class="title-header">BLOG DE NOTÍCIAS</h2>
             <nav class="navbar navbar-expand-sm bg-gray navbar-light justify-content-center">
-                <ul class="navbar-nav" style="margin-right: 49%;">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="#">Início</a>
+            <ul class="navbar-nav" style="margin-right: 49%;">
+                    <li class="nav-item">
+                    <a class="nav-link" href="index.php">Início</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -38,8 +38,8 @@
                             <a class="dropdown-item" href="temas/mundo/">Mundo</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="about.php">Sobre</a>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Sobre</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contato</a>
@@ -48,81 +48,15 @@
                     <a class="nav-link" href="login.php">Logar</a>
                     </li>
                 </ul>
-                    <form class="form-inline pull-right" action="/action_page.php">
+                    <form class="form-inline pull-right" style="margin-right: ;" action="/action_page.php">
                     <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar notícias" required>
                     <button class="btn btn-primary font-weight-bold" type="submit">Pesquisar <i class="fa fa-search fa-sm"></i></button>
                 </form>
             </nav>
         </header>
-                <div class="col-md-8 float-left mt-2 ml-4 mr-3">
-                    <h2 class="col-md-12 border-bottom border-secondary">Últimas notícias</h2>
-                    <ul class="nav nav-pills nav-justified">
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                    </ul>
-                    <ul class="nav nav-pills nav-justified">
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                    </ul>
-                    <br><br><br><br><br><br>
-                </div>
-                <div class="col-md-3 float-left mt-2 p-0 ml-5">
-                    <h3>Arquivo</h3>
-                    <div id="accordion">
-                            <div class="card">
-                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                <div class="card-header">
-                                2019
-                                </div>
-                            </a>
-                            <div id="collapseOne" class="collapse" data-parent="#accordion">
-                                <div class="card-body">
-                                    <ul class="list-group ">
-                                        <a href="news.php" class="li-hover list-group-item d-flex justify-content-between align-items-center">
-                                            Janeiro
-                                            <span class="badge badge-primary badge-pill">0</span>
-                                        </a>
-                                        <a href="#" class="li-hover list-group-item d-flex justify-content-between align-items-center">
-                                            Fevereiro
-                                            <span class="badge badge-primary badge-pill">0</span>
-                                        </a>
-                                        <a href="#" class="li-hover list-group-item d-flex justify-content-between align-items-center">
-                                            Março
-                                            <span class="badge badge-primary badge-pill">0</span>
-                                        </a>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <br><br><br><br><br><br><br><br><br><br><br>            <br><br><br><br><br><br><br><br><br><br><br>
+        <div class="container-fluid">
+            blabalblablablalbalbalbalbla<br><br><br><br><br><br><br><br><br><br><br>
+        </div>
         <footer>
             <div class="row">
                 <div class="col-sm-4 col-footer">Blog de Notícias</div>
@@ -158,10 +92,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"><span class="copyright">Desenvolvido por Pablo Luiz - BlogDeNoticias todos os direitos reservados, 2019.
+                <div class="col-sm-4 col-footer"></div>
+                <div class="col-sm-4 col-footer"><span class="copyright">Desenvolvido por Pablo Luiz - BlogDeNoticias todos os direitos reservados, 2019.
                     <i class="fa fa-copyright fa-lg"></i></span></div>
-                <div class="col-sm-4"></div>
+                <div class="col-sm-4 col-footer"></div>
             </div>
         </footer>
     </div>

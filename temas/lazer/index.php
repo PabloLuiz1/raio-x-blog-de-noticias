@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title>BlogDeNoticias | Início</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../css/font-awesome.min.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/png" href="images/Favicon.png"/>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/popper.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
     </head>
 <body>
     <div class="container-fluid p-0">
@@ -23,32 +23,32 @@
             <h2 class="title-header">BLOG DE NOTÍCIAS</h2>
             <nav class="navbar navbar-expand-sm bg-gray navbar-light justify-content-center">
                 <ul class="navbar-nav" style="margin-right: 49%;">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="#">Início</a>
+                    <li class="nav-item">
+                    <a class="nav-link" href="../../index.php">Início</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             Noticias
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="temas/esporte/">Esporte</a>
-                            <a class="dropdown-item" href="temas/lazer/">Lazer</a>
-                            <a class="dropdown-item" href="temas/politica/">Política</a>
-                            <a class="dropdown-item" href="temas/saude/">Saúde</a>
-                            <a class="dropdown-item" href="temas/mundo/">Mundo</a>
+                            <a class="dropdown-item" href="../esporte">Esporte</a>
+                            <a class="dropdown-item active" href="#">Lazer</a>
+                            <a class="dropdown-item" href="../politica">Política</a>
+                            <a class="dropdown-item" href="../saude">Saúde</a>
+                            <a class="dropdown-item" href="../mundo">Mundo</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="about.php">Sobre</a>
+                    <a class="nav-link" href="../../about.php">Sobre</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contato</a>
+                    <a class="nav-link" href="../../contact.php">Contato</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="login.php">Logar</a>
+                    <a class="nav-link" href="../../login.php">Logar</a>
                     </li>
                 </ul>
-                    <form class="form-inline pull-right" action="/action_page.php">
+                    <form class="form-inline pull-right" style="margin-right: ;" action="/action_page.php">
                     <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar notícias" required>
                     <button class="btn btn-primary font-weight-bold" type="submit">Pesquisar <i class="fa fa-search fa-sm"></i></button>
                 </form>
@@ -96,23 +96,23 @@
                     <h3>Arquivo</h3>
                     <div id="accordion">
                             <div class="card">
-                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                <div class="card-header">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#collapseOne">
                                 2019
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                             <div id="collapseOne" class="collapse" data-parent="#accordion">
                                 <div class="card-body">
-                                    <ul class="list-group ">
-                                        <a href="news.php" class="li-hover list-group-item d-flex justify-content-between align-items-center">
+                                    <ul class="list-group">
+                                        <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
                                             Janeiro
                                             <span class="badge badge-primary badge-pill">0</span>
                                         </a>
-                                        <a href="#" class="li-hover list-group-item d-flex justify-content-between align-items-center">
+                                        <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
                                             Fevereiro
                                             <span class="badge badge-primary badge-pill">0</span>
                                         </a>
-                                        <a href="#" class="li-hover list-group-item d-flex justify-content-between align-items-center">
+                                        <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
                                             Março
                                             <span class="badge badge-primary badge-pill">0</span>
                                         </a>

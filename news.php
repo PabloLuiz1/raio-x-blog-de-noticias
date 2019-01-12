@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>BlogDeNoticias | Início</title>
+        <title>BlogDeNoticias | Notícias</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -23,10 +23,10 @@
             <h2 class="title-header">BLOG DE NOTÍCIAS</h2>
             <nav class="navbar navbar-expand-sm bg-gray navbar-light justify-content-center">
                 <ul class="navbar-nav" style="margin-right: 49%;">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                     <a class="nav-link" href="#">Início</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             Noticias
                         </a>
@@ -55,7 +55,7 @@
             </nav>
         </header>
                 <div class="col-md-8 float-left mt-2 ml-4 mr-3">
-                    <h2 class="col-md-12 border-bottom border-secondary">Últimas notícias</h2>
+                    <h2 class="col-md-12 border-bottom border-secondary">Notícias de Janeiro de 2019</h2>
                     <ul class="nav nav-pills nav-justified">
                         <li class="nav-item mr-3">
                             <a class="nav-link" href="#">
@@ -98,13 +98,13 @@
                             <div class="card">
                             <a class="card-link" data-toggle="collapse" href="#collapseOne">
                                 <div class="card-header">
-                                2019
+                                    2019    
                                 </div>
                             </a>
-                            <div id="collapseOne" class="collapse" data-parent="#accordion">
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                 <div class="card-body">
                                     <ul class="list-group ">
-                                        <a href="news.php" class="li-hover list-group-item d-flex justify-content-between align-items-center">
+                                        <a href="#" style="background: #f5f5f5;" class="li-hover list-group-item d-flex justify-content-between align-items-center">
                                             Janeiro
                                             <span class="badge badge-primary badge-pill">0</span>
                                         </a>
