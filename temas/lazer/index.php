@@ -1,11 +1,33 @@
 <!DOCTYPE HTML>
+<?php 
+    require '../../php/conexao.php';
+    require '../../php/gerenciaBd.php';
+
+    $noticias = selectNoticiaSeis("tbnoticia.ativo = 1 AND tema = 'Lazer'");
+    
+    $numeromeses = array (
+        1 => selectQtdPorMes('2019', '1', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '2', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '3', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '4', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '5', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '6', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '7', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '8', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '9', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '10', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '11', "tema = 'Lazer'")['total'],
+        selectQtdPorMes('2019', '12', "tema = 'Lazer'")['total']
+    );
+
+?>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <title>BlogDeNoticias | Início</title>
         <link rel="stylesheet" href="../../css/style.css">
-        <link rel="stylesheet" href="../../css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+        <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../../css/font-awesome.min.css"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/png" href="images/Favicon.png"/>
         <script src="../../js/jquery.min.js"></script>
@@ -55,40 +77,26 @@
             </nav>
         </header>
                 <div class="col-md-8 float-left mt-2 ml-4 mr-3">
-                    <h2 class="col-md-12 border-bottom border-secondary">Últimas notícias</h2>
+                    <h2 class="col-md-12 border-bottom border-secondary">Lazer</h2>
                     <ul class="nav nav-pills nav-justified">
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                    </ul>
-                    <ul class="nav nav-pills nav-justified">
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                        <li class="nav-item mr-3">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                            <img class="img-fluid rounded" src="../images/teste.png">
-                            A mentira da rota blablablablabla</a>
-                        </li>
+                        <?php 
+                            if (!$noticias){
+                                echo ("Não há notícias recentes.");
+                            }
+                            else{
+                                foreach ($noticias as $n){
+                                    echo ('<div class="col-md-4 float-left">');
+                                        echo ('<div class="nav-item mb-5 mr-3">');
+                                            echo ('<a class="nav-link" href="../../news.php?n='.$n['idnoticia'].'">');
+                                                echo ('<img class="img-fluid rounded" src="../../uploaded/'.$n['imagem'].'">');
+                                                echo ($n['titulo']);
+                                            echo ('</a>');
+                                            echo ('<strong>Tema: </strong> '.$n['tema'].'<br> <strong>Por: </strong>'.$n['nomeusuario'].' <br> <strong>Publicação: </strong>'.$n['dat']);
+                                        echo ('</div>');
+                                    echo ('</div>');
+                                }
+                            }
+                        ?>
                     </ul>
                     <br><br><br><br><br><br>
                 </div>
@@ -96,26 +104,38 @@
                     <h3>Arquivo</h3>
                     <div id="accordion">
                             <div class="card">
-                            <div class="card-header">
-                                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                <div class="card-header">
                                 2019
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                             <div id="collapseOne" class="collapse" data-parent="#accordion">
                                 <div class="card-body">
                                     <ul class="list-group">
-                                        <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                                            Janeiro
-                                            <span class="badge badge-primary badge-pill">0</span>
-                                        </a>
-                                        <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                                            Fevereiro
-                                            <span class="badge badge-primary badge-pill">0</span>
-                                        </a>
-                                        <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                                            Março
-                                            <span class="badge badge-primary badge-pill">0</span>
-                                        </a>
+                                    <?php 
+                                            $nomemeses = array (
+                                                1 => 'Janeiro',
+                                                'Fevereiro',
+                                                'Março',
+                                                'Abril',
+                                                'Maio',
+                                                'Junho',
+                                                'Julho',
+                                                'Agosto',
+                                                'Setembro',
+                                                'Outubro',
+                                                'Novembro',
+                                                'Dezembro'
+                                            );
+
+                                            for ($i = 1; $i < 13; $i++){
+                                                echo ('<a href="../../news.php?m='.$i.'&a=2019&t=Lazer" class="li-hover list-group-item d-flex justify-content-between align-items-center">
+                                                    '.$nomemeses[$i].'
+                                                    <span class="badge badge-primary badge-pill">');
+                                                    echo ($numeromeses[$i]." </span>");
+                                                echo ('</a>');
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>

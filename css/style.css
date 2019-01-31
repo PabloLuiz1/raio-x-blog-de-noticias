@@ -1,5 +1,6 @@
 body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow-x: hidden;
 }
 img{
 width:100%;
@@ -10,7 +11,7 @@ width:100%;
     position: relative;
     float: left;
     width: 450px;
-    height: 300px;
+    min-height: 300px;
     background-color: #ffffff;
     border: 2px solid #dbdbdb;
     border-radius: 5px;
@@ -37,11 +38,6 @@ padding:5px;
 margin:10px;
 }
 
-p{
-font-weight:bold;
-padding:10px;
-}
-
 /* ESTRUTURA BÁSICA - HEADER, FOOTER E CONTAINER */
 
 header{
@@ -56,7 +52,7 @@ header{
 
 footer{
     width: 100%;
-    height: 300px;
+    height: 140px;
     position: relative;
     float: left;
     padding: 1%;
@@ -79,27 +75,26 @@ footer a:hover{
 .figure-header{
     position: relative;
     float: left;
-    margin: 25px 0px 0px 100px;
     width: 230px;
-    height: 89px;
-    z-index: 2;
+    height: 77px;
+    z-index: 0;
+    margin: 0%;
 }
 
 .figure-header a{
     position: relative;
     float: left;
-    padding: 0px;
-    margin: 0px;
     width: 230px;
-    height: 89px;
+    height: 77px;
 }
 
 .title-header{
+    color: #fff;
     position: relative;
     width: 900px;
     height: auto;
     left: 15%;
-    margin: 4% 0px 5% 0px;
+    margin: 5% 0px 5% 0px;
     z-index: 1;
 }
 
@@ -111,7 +106,13 @@ footer a:hover{
 }
 
 .col-footer{
-    margin-bottom: 2%;
+    margin-bottom: 1.5%;
+    height: 25px;
+}
+
+.col-footer img{
+    width: 36px;
+    height: 36px;
 }
 
 .copyright{
@@ -138,6 +139,25 @@ button{
     font-weight: bold;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+.calibri-12{
+    font-size: 12px; 
+    font-family: Calibri;
+}
+
+.min-height-486{
+    min-height: 486px;
+}
+/* IMAGES DE FUNDO DOS TEMAS */
+
+#arquivosdox{
+    background-image: url("../images/grades.jpeg");
+}
+
+
 /* PÁGINA index.php */
 
 .img-noticia{
@@ -153,7 +173,7 @@ button{
     background-color: #f5f5f5;
 }
 
-/* PÁGINA postar.PHP */
+/* PÁGINA new-post.PHP */
 
 .form-postar{
     margin-left: 0%;
@@ -192,10 +212,18 @@ td{
     text-transform: uppercase;
 }
 
-.frame-arquivos{
+.frame-noticia{
     margin-top: 1%;
     margin-bottom: 1%;
-    width: 98.8%;
+    width: 100%;
+    height: 600px;
+    border: 1px solid black;
+}
+
+.frame-video{
+    margin-left: 0%;
+    margin-bottom: 1%;
+    width: 100%;
     height: 600px;
     border: 1px solid black;
 }
