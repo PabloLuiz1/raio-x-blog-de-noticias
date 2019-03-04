@@ -5,7 +5,7 @@
 ?>
     <head>
         <meta charset="utf-8">
-        <title>BlogDeNoticias | Recuperar senha</title>
+        <title>Raio-X | Recuperar senha</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -28,11 +28,11 @@
                             Noticias
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="temas/arquivosdox/">Arquivos do X</a>
-                            <a class="dropdown-item" href="temas/lazer/">Lazer</a>
-                            <a class="dropdown-item" href="temas/politica/">Política</a>
-                            <a class="dropdown-item" href="temas/saude/">Saúde</a>
-                            <a class="dropdown-item" href="temas/mundo/">Mundo</a>
+                            <a class="dropdown-item" href="estados/arquivosdox/">Arquivos do X</a>
+                            <a class="dropdown-item" href="estados/lazer/">Lazer</a>
+                            <a class="dropdown-item" href="estados/politica/">Política</a>
+                            <a class="dropdown-item" href="estados/saude/">Saúde</a>
+                            <a class="dropdown-item" href="estados/mundo/">Mundo</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -41,13 +41,10 @@
                     <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contato</a>
                     </li>
-                    <li class="nav-item active">
-                    <a class="nav-link" href="login.php">Logar</a>
-                    </li>
                 </ul>
                     <figure class="float-left p-0 mx-auto figure-header">
                         <a href="index.php">
-                            <img src="images/logo.png" class="img-responsive">
+                            <img src="images/logo.jpeg" class="img-responsive">
                         </a>
                     </figure>
                     <form class="form-inline pull-right" action="/action_page.php">
@@ -76,7 +73,7 @@
                     <div class="form-group" style="padding-left: 17%; padding-right: 17%;">
                         <div class="col-sm-12">
                             <input type="submit" class="btn btn-success pull-right font-weight-bold" name="redefinir" value=" Enviar ">
-                            <a href="login.php" class="text-decoration-none btn btn-primary pull-left font-weight-bold"><i class="fas fa-arrow-left"></i> Voltar</a><br>
+                            <a href="index.php" class="text-decoration-none btn btn-primary pull-left font-weight-bold"><i class="fas fa-arrow-left"></i> Voltar</a><br>
                         </div>
                     </div>
                 </form>
@@ -86,23 +83,23 @@
         <div class="row">
                 <div class="col-sm-4 col-footer">
                     <a href="index.php">
-                        <img src="images/logotipo.png" class="img-responsive"> Tribuna Direta
+                        <img src="images/logotipo.jpeg" class="img-responsive"> Raio-X
                     </a>
                 </div>
-                <div class="col-sm-4 col-footer"><a href="#" target="_blank" title="Página oficial no Facebook" alt="Link externo que redireciona a pagina oficial no Facebook do BlogDeNoticias"><i class="fab fa-facebook fa-lg"></i> Blog de Notícias</a>
+                <div class="col-sm-4 col-footer"><a href="#" target="_blank" title="Página oficial no Facebook" alt="Link externo que redireciona a pagina oficial no Facebook do Raio-X"><i class="fab fa-facebook fa-lg"></i> Raio-X</a>
                 </div>
-                <div class="col-sm-4 col-footer"><a href="mailto:contato@blogdenoticias.com" target="_blank" title="E-mail para contato" alt="Link externo que aciona a ação de enviar e-mail">
-                    <i class="fa fa-envelope fa-lg"></i>contato@blogdenoticias.com</a>
+                <div class="col-sm-4 col-footer"><a href="mailto:contato@raio-x.com" target="_blank" title="E-mail para contato" alt="Link externo que aciona a ação de enviar e-mail">
+                    <i class="fa fa-envelope fa-lg"></i>contato@raiox.com</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-footer"><a href="callto:+5511912345678" target="_blank" title="WhatsApp para contato" alt="Link externo que aciona a ação de adicionar contato">
                     <i class="fab fa-whatsapp-square fa-lg"></i>+55 11 91234-5678</a></div>
-                <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do BlogDeNoticias">
-                    <i class="fab fa-youtube fa-lg"></i>/blogdenoticias</a>
+                <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do Raio-X">
+                    <i class="fab fa-youtube fa-lg"></i>/Raio-X</a>
                 </div>
                 <div class="col-sm-4 col-footer">Newsletter - Saiba de cada postagem nova no blog:
-                    <form class="form-inline newsletter" action="php/assinar-email.php">
+                    <form class="form-inline newsletter" action="#">
                     <input class="form-control form-control-sm col-sm-6 mr-sm-4" type="text" placeholder="E-mail" required>
                     <button class="btn btn-sm btn-success" type="submit">Assinar</button>
                 </div>
@@ -111,7 +108,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 ml-5 "></div>
-                <div class="col-sm-3"><span class="copyright">Tribuna Direta, a notícia do jeito certo, 2019.
+                <div class="col-sm-3"><span class="copyright">Raio-X, a verdade sobre o sistema prisional brasileiro, 2019.
                     <i class="fa fa-copyright fa-lg"></i></span></div>
             </div>
         </footer>

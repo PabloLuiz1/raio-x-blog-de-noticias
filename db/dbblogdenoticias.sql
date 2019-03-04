@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `tbnoticia` (
   `data_publicacao` datetime NOT NULL,
   `titulo` varchar(60) COLLATE utf8_bin NOT NULL,
   `resumo` varchar(200) COLLATE utf8_bin NOT NULL,
-  `tema` varchar(20) COLLATE utf8_bin NOT NULL,
+  `estado` varchar(20) COLLATE utf8_bin NOT NULL,
   `imagem` varchar(50) COLLATE utf8_bin NOT NULL,
   `arquivo` varchar(50) COLLATE utf8_bin NOT NULL,
   `video` varchar(100) COLLATE utf8_bin NOT NULL,

@@ -3,31 +3,31 @@
     require '../../php/conexao.php';
     require '../../php/gerenciaBd.php';
 
-    $noticias = selectNoticiaSeis("tbnoticia.ativo = 1 AND tema = 'Política'");
+    $noticias = selectNoticiaSeis("tbnoticia.ativo = 1 AND estado = 'Política'");
     $numeromeses = array (
-        1 => selectQtdPorMes('2019', '1', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '2', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '3', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '4', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '5', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '6', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '7', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '8', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '9', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '10', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '11', "tema = 'Política'")['total'],
-        selectQtdPorMes('2019', '12', "tema = 'Política'")['total']
+        1 => selectQtdPorMes('2019', '1', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '2', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '3', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '4', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '5', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '6', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '7', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '8', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '9', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '10', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '11', "estado = 'Política'")['total'],
+        selectQtdPorMes('2019', '12', "estado = 'Política'")['total']
     );
 ?>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>BlogDeNoticias | Início</title>
+        <title>Raio-X | Início</title>
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../../css/font-awesome.min.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-        <link rel="shortcut icon" type="image/png" href="images/Favicon.png"/>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <script src="../../js/jquery.min.js"></script>
         <script src="../../js/popper.min.js"></script>
         <script src="../../js/bootstrap.min.js"></script>
@@ -90,7 +90,7 @@
                                                 echo ('<img class="img-fluid rounded" src="../../uploaded/'.$n['imagem'].'">');
                                                 echo ($n['titulo']);
                                             echo ('</a>');
-                                            echo ('<strong>Tema: </strong> '.$n['tema'].'<br> <strong>Por: </strong>'.$n['nomeusuario'].' <br> <strong>Publicação: </strong>'.$n['dat']);
+                                            echo ('<strong>estado: </strong> '.$n['estado'].'<br> <strong>Por: </strong>'.$n['nomeusuario'].' <br> <strong>Publicação: </strong>'.$n['dat']);
                                         echo ('</div>');
                                     echo ('</div>');
                                 }
@@ -145,24 +145,24 @@
         <footer>
             <div class="row">
                 <div class="col-sm-4 col-footer">Blog de Notícias</div>
-                <div class="col-sm-4 col-footer"><a href="#" target="_blank" title="Página oficial no Facebook" alt="Link externo que redireciona a pagina oficial no Facebook do BlogDeNoticias"><i class="fab fa-facebook fa-lg"></i> Blog de Notícias</a>
+                <div class="col-sm-4 col-footer"><a href="#" target="_blank" title="Página oficial no Facebook" alt="Link externo que redireciona a pagina oficial no Facebook do Raio-X"><i class="fab fa-facebook fa-lg"></i> Blog de Notícias</a>
                 </div>
-                <div class="col-sm-4 col-footer"><a href="https://github.com/PabloLuiz1/BlogDeNoticias" target="_blank" title="Repositório Git deste projeto" alt="Link externo que redireciona ao projeto git deste site na plataforma online GitHub">
+                <div class="col-sm-4 col-footer"><a href="https://github.com/PabloLuiz1/Raio-X" target="_blank" title="Repositório Git deste projeto" alt="Link externo que redireciona ao projeto git deste site na plataforma online GitHub">
                     <i class="fas fa-code-branch"></i>Repositório git</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-footer"></div>
-                <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do BlogDeNoticias">
-                    <i class="fab fa-youtube fa-lg"></i>/blogdenoticias</a>
+                <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do Raio-X">
+                    <i class="fab fa-youtube fa-lg"></i>/Raio-X</a>
                 </div>
                 <div class="col-sm-4 col-footer">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-footer"></div>
-                <div class="col-sm-4 col-footer"><a href="mailto:contato@blogdenoticias.com" target="_blank" title="E-mail para contato" alt="Link externo que aciona a ação de enviar e-mail">
-                    <i class="fa fa-envelope fa-lg"></i>contato@blogdenoticias.com</a></div>
+                <div class="col-sm-4 col-footer"><a href="mailto:contato@raio-x.com" target="_blank" title="E-mail para contato" alt="Link externo que aciona a ação de enviar e-mail">
+                    <i class="fa fa-envelope fa-lg"></i>contato@raio-x.com</a></div>
                 <div class="col-sm-4 col-footer">
                 </div>
             </div>
@@ -178,7 +178,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4"></div>
-                <div class="col-sm-4"><span class="copyright">Desenvolvido por Pablo Luiz - BlogDeNoticias todos os direitos reservados, 2019.
+                <div class="col-sm-4"><span class="copyright">Desenvolvido por Pablo Luiz - Raio-X todos os direitos reservados, 2019.
                     <i class="fa fa-copyright fa-lg"></i></span></div>
                 <div class="col-sm-4"></div>
             </div>

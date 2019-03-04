@@ -58,7 +58,7 @@
 
     function selectNoticia($where = null){
         $where = ($where) ? " WHERE {$where}" : null;
-        $query = "SELECT tbusuario.id as idusuario, tbusuario.nome as nomeusuario, tbnoticia.id as idnoticia, DATE_FORMAT(data_publicacao, '%d/%c/%Y - %H:%i') as dat, titulo, resumo, tema, 
+        $query = "SELECT tbusuario.id as idusuario, tbusuario.nome as nomeusuario, tbnoticia.id as idnoticia, DATE_FORMAT(data_publicacao, '%d/%c/%Y - %H:%i') as dat, titulo, resumo, estado, unidade, 
         imagem, arquivo, video, autor, tbnoticia.ativo FROM tbnoticia INNER JOIN tbusuario ON tbnoticia.autor = tbusuario.id {$where} ORDER BY dat DESC";
         $result = execute($query);
         if(!mysqli_num_rows($result)){
@@ -86,7 +86,7 @@
 
     function selectNoticiaSeis($where = null){
         $where = ($where) ? " WHERE {$where}" : null;
-        $query = "SELECT tbusuario.id as idusuario, tbusuario.nome as nomeusuario, tbnoticia.id as idnoticia, DATE_FORMAT(data_publicacao, '%d/%c/%Y - %H:%i') as dat, titulo, resumo, tema, 
+        $query = "SELECT tbusuario.id as idusuario, tbusuario.nome as nomeusuario, tbnoticia.id as idnoticia, DATE_FORMAT(data_publicacao, '%d/%c/%Y - %H:%i') as dat, titulo, resumo, estado, 
         imagem, arquivo, video, autor, tbnoticia.ativo FROM tbnoticia INNER JOIN tbusuario ON tbnoticia.autor = tbusuario.id {$where} ORDER BY dat DESC LIMIT 6";
         $result = execute($query);
         if(!mysqli_num_rows($result)){
@@ -100,9 +100,9 @@
         }
     }
 
-    function selectQtdPorMes($ano, $mes, $tema = null){
-        $tema = ($tema) ? " AND {$tema}" : null;
-        $query = "SELECT COUNT(id) as total FROM tbnoticia WHERE ativo = 1 {$tema} AND data_publicacao BETWEEN '{$ano}-{$mes}-01' AND '{$ano}-{$mes}-31'";
+    function selectQtdPorMes($ano, $mes, $estado = null){
+        $estado = ($estado) ? " AND {$estado}" : null;
+        $query = "SELECT COUNT(id) as total FROM tbnoticia WHERE ativo = 1 {$estado} AND data_publicacao BETWEEN '{$ano}-{$mes}-01' AND '{$ano}-{$mes}-31'";
         $result = execute($query);
         if(!mysqli_num_rows($result)){
             return false;
@@ -113,10 +113,10 @@
         }
     }
 
-    function selectNoticiasPorMes($ano, $mes, $tema = null){
-        $tema = ($tema) ? " AND {$tema}" : null;
-        $query = "SELECT tbusuario.id as idusuario, tbusuario.nome as nomeusuario, tbnoticia.id as idnoticia, DATE_FORMAT(data_publicacao, '%d/%c/%Y - %H:%i') as dat, titulo, resumo, tema, 
-        imagem, arquivo, video, autor, tbnoticia.ativo FROM tbnoticia INNER JOIN tbusuario ON tbnoticia.autor = tbusuario.id WHERE tbnoticia.ativo = 1 {$tema} AND data_publicacao BETWEEN '{$ano}-{$mes}-01' AND '{$ano}-{$mes}-31' ORDER BY dat DESC";
+    function selectNoticiasPorMes($ano, $mes, $estado = null){
+        $estado = ($estado) ? " AND {$estado}" : null;
+        $query = "SELECT tbusuario.id as idusuario, tbusuario.nome as nomeusuario, tbnoticia.id as idnoticia, DATE_FORMAT(data_publicacao, '%d/%c/%Y - %H:%i') as dat, titulo, resumo, estado, 
+        imagem, arquivo, video, autor, tbnoticia.ativo FROM tbnoticia INNER JOIN tbusuario ON tbnoticia.autor = tbusuario.id WHERE tbnoticia.ativo = 1 {$estado} AND data_publicacao BETWEEN '{$ano}-{$mes}-01' AND '{$ano}-{$mes}-31' ORDER BY dat DESC";
         $result = execute($query);
         if(!mysqli_num_rows($result)){
             return false;
@@ -161,6 +161,41 @@
             if ($key == $keyCorreta){
                 return $res['id'];
             }
+        }
+    }
+
+    function selectQtdPorEstado($estado){
+        $query = "SELECT COUNT(id) as total FROM tbnoticia WHERE ativo = 1 AND estado = '$estado'";
+        $result = execute($query);
+        if(!mysqli_num_rows($result)){
+            return false;
+        }
+        else{
+            $res = mysqli_fetch_assoc($result);
+            return $res;
+        }
+    }
+
+    function selectNoticiasPorEstado($estado){
+        $query = "SELECT tbusuario.id as idusuario, tbusuario.nome as nomeusuario, tbnoticia.id as idnoticia, DATE_FORMAT(data_publicacao, '%d/%c/%Y - %H:%i') as dat, titulo, resumo, estado, 
+        imagem, arquivo, video, autor, tbnoticia.ativo FROM tbnoticia INNER JOIN tbusuario ON tbnoticia.autor = tbusuario.id WHERE tbnoticia.ativo = 1 AND tbnoticia.estado = '$estado' ORDER BY dat DESC";
+        $result = execute($query);
+        if(!mysqli_num_rows($result)){
+            return false;
+        }
+        else{
+            while($res = mysqli_fetch_assoc($result)){
+                $dados[] = $res;
+            }
+            return $dados;
+        }
+        $result = execute($query);
+        if(!mysqli_num_rows($result)){
+            return false;
+        }
+        else{
+            $res = mysqli_fetch_assoc($result);
+            return $res;
         }
     }
 ?>

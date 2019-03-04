@@ -17,7 +17,7 @@
     foreach($post as $p){
         $titulo = $p['titulo'];
         $resumo = $p['resumo'];
-        $tema = $p['tema'];
+        $estado = $p['estado'];
         $imagem = $p['imagem'];
         $arquivo = $p['arquivo'];
         $video = $p['video'];
@@ -36,7 +36,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>BlogDeNoticias | Excluir post</title>
+        <title>Raio-X | Excluir post</title>
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/font-awesome.min.css" />
@@ -68,7 +68,7 @@
                 </ul>
                     <figure class="float-left p-0 mx-auto figure-header">
                         <a href="index.php">
-                            <img src="../images/logo.png" class="img-responsive">
+                            <img src="../images/logo.jpeg" class="img-responsive">
                         </a>
                     </figure>
                     <form class="form-inline pull-right" action="/action_page.php">
@@ -86,14 +86,14 @@
                         <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Insira o título da postagem" value="<?php echo $titulo ?>" required disabled>
                         <label for="resumo">Resumo: </label>
                         <textarea rows="3" class="form-control" id="resumo" name="resumo" placeholder="Insira um breve resumo sobre a postagem" required disabled><?php echo $resumo ?></textarea>
-                        <label for="tema">Tema: </label>
+                        <label for="estado">estado: </label>
                         <select class="form-control" required disabled>
-                            <option value="">Selecione</option>
-                            <option value="ESPORTE" <?php if ($tema = "ESPORTE") echo "selected" ?>>Esporte</option>
-                            <option value="LAZER" <?php if ($tema = "LAZER") echo "selected" ?>>Lazer</option>
-                            <option value="POLITICA" <?php if ($tema = "POLITICA") echo "selected" ?>>Política</option>
-                            <option value="SAUDE" <?php if ($tema = "SAUDE") echo "selected" ?>>Saúde</option>
-                            <option value="MUNDO" <?php if ($tema = "MUNDO") echo "selected" ?>>Mundo</option>
+                            "">Selecione</option>
+                            "ESPORTE" <?php if ($estado = "ESPORTE") echo "selected" ?>>Esporte</option>
+                            "LAZER" <?php if ($estado = "LAZER") echo "selected" ?>>Lazer</option>
+                            "POLITICA" <?php if ($estado = "POLITICA") echo "selected" ?>>Política</option>
+                            "SAUDE" <?php if ($estado = "SAUDE") echo "selected" ?>>Saúde</option>
+                            "MUNDO" <?php if ($estado = "MUNDO") echo "selected" ?>>Mundo</option>
                         </select>
                         <label for="imagem">Imagem: </label>
                         <ul class="nav nav-pills nav-justified">
@@ -135,20 +135,20 @@
         <div class="row">
                 <div class="col-sm-4 col-footer">
                     <a href="index.php">
-                        <img src="../images/logotipo.png" class="img-responsive"> Tribuna Direta
+                        <img src="../images/logotipo.jpeg" class="img-responsive"> Raio-X
                     </a>
                 </div>
-                <div class="col-sm-4 col-footer"><a href="#" target="_blank" title="Página oficial no Facebook" alt="Link externo que redireciona a pagina oficial no Facebook do BlogDeNoticias"><i class="fab fa-facebook fa-lg"></i> Blog de Notícias</a>
+                <div class="col-sm-4 col-footer"><a href="#" target="_blank" title="Página oficial no Facebook" alt="Link externo que redireciona a pagina oficial no Facebook do Raio-X"><i class="fab fa-facebook fa-lg"></i> Raio-X</a>
                 </div>
-                <div class="col-sm-4 col-footer"><a href="mailto:contato@blogdenoticias.com" target="_blank" title="E-mail para contato" alt="Link externo que aciona a ação de enviar e-mail">
-                    <i class="fa fa-envelope fa-lg"></i>contato@blogdenoticias.com</a>
+                <div class="col-sm-4 col-footer"><a href="mailto:contato@raio-x.com" target="_blank" title="E-mail para contato" alt="Link externo que aciona a ação de enviar e-mail">
+                    <i class="fa fa-envelope fa-lg"></i>contato@raiox.com</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-footer"><a href="callto:+5511912345678" target="_blank" title="WhatsApp para contato" alt="Link externo que aciona a ação de adicionar contato">
                     <i class="fab fa-whatsapp-square fa-lg"></i>+55 11 91234-5678</a></div>
-                <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do BlogDeNoticias">
-                    <i class="fab fa-youtube fa-lg"></i>/blogdenoticias</a>
+                <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do Raio-X">
+                    <i class="fab fa-youtube fa-lg"></i>/Raio-X</a>
                 </div>
                 <div class="col-sm-4 col-footer">Newsletter - Saiba de cada postagem nova no blog:
                     <form class="form-inline newsletter" action="#">
@@ -160,7 +160,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 ml-5 "></div>
-                <div class="col-sm-3"><span class="copyright">Tribuna Direta, a notícia do jeito certo, 2019.
+                <div class="col-sm-3"><span class="copyright">Raio-X, a verdade sobre o sistema prisional brasileiro, 2019.
                     <i class="fa fa-copyright fa-lg"></i></span></div>
             </div>
         </footer>

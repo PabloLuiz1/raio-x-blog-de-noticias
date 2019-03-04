@@ -31,7 +31,7 @@
             $datapublicacao = $n['dat'];
             $titulo = $n['titulo'];
             $resumo = $n['resumo'];
-            $tema = $n['tema'];
+            $estado = $n['estado'];
             $imagem = $n['imagem'];
             $arquivo = $n['arquivo'];
             $video = $n['video'];
@@ -43,20 +43,20 @@
     if (isset($_GET['a']) && isset($_GET['m'])){
         $mes = nomeDoMes($_GET['m']);
         if (isset($_GET['t'])){
-            $noticias = selectNoticiasPorMes($_GET['a'], $_GET['m'], "tbnoticia.tema = '".$_GET['t']."'");
+            $noticias = selectNoticiasPorMes($_GET['a'], $_GET['m'], "tbnoticia.estado = '".$_GET['t']."'");
             $numeromeses = array (
-                1 => selectQtdPorMes('2019', '1', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '2', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '3', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '4', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '5', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '6', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '7', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '8', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '9', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '10', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '11', "tema = '".$_GET['t']."'")['total'],
-                selectQtdPorMes('2019', '12', "tema = '".$_GET['t']."'")['total']
+                1 => selectQtdPorMes('2019', '1', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '2', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '3', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '4', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '5', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '6', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '7', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '8', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '9', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '10', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '11', "estado = '".$_GET['t']."'")['total'],
+                selectQtdPorMes('2019', '12', "estado = '".$_GET['t']."'")['total']
             );
         }
         else
@@ -67,7 +67,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>BlogDeNoticias | Notícias</title>
+        <title>Raio-X | Notícias</title>
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/font-awesome.min.css" />
@@ -101,7 +101,7 @@
                 </ul>
                     <figure class="float-left p-0 mx-auto figure-header">
                         <a href="index.php">
-                            <img src="../images/logo.png" class="img-responsive">
+                            <img src="../images/logo.jpeg" class="img-responsive">
                         </a>
                     </figure>
                     <form class="form-inline pull-right" action="/action_page.php">
@@ -113,7 +113,7 @@
         <div class="col-md-8 float-left mt-2 ml-4 mr-3">
                     <?php if (isset($_GET['n'])){
                         echo ('<h2 class="col-md-12 border-bottom border-secondary">'.$titulo.'</h2>
-                        '.$resumo.'
+                        '.$resumo.'<br><strong>Estado: </strong>'.$estado.'<br> <strong>Unidade: </strong>'.$unidade.'
                         <iframe class="frame-noticia mx-auto" src="uploaded/'.$arquivo.'"></iframe>
                         <h4 class="col-md-12 border-bottom border-secondary">Vídeo: </h4>
                         <iframe class="frame-video" width="560" height="315" src="'.$video.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -137,7 +137,7 @@
                                             echo ('<img class="img-fluid rounded" src="uploaded/'.$n['imagem'].'">');
                                             echo ($n['titulo']);
                                         echo ('</a>');
-                                        echo ('<strong>Tema: </strong> '.$n['tema'].'<br> <strong>Autor: </strong>'.$n['nomeusuario'].' 
+                                        echo ('<strong>Estado: </strong> '.$n['estado'].'<br> <strong>Autor: </strong>'.$n['nomeusuario'].' 
                                         <br> <strong>Publicação: </strong>'.$n['dat'].'
                                         <br> <a class="p-0 nav-link text-center" href="news.php?n='.$n['idnoticia'].'#comments" title="Ver os comentários desta postagem">
                                         <strong>Comentários <i class="fa fa-comment fa-sm"></i></strong></a>');
@@ -158,7 +158,7 @@
                                             echo ('<img class="img-fluid rounded" src="../uploaded/'.$n['imagem'].'">');
                                             echo ($n['titulo']);
                                         echo ('</a>');
-                                        echo ('<strong>Tema: </strong> '.$n['tema'].'<br> <strong>Autor: </strong>'.$n['nomeusuario'].' 
+                                        echo ('<strong>Estado: </strong> '.$n['estado'].'<br> <strong>Autor: </strong>'.$n['nomeusuario'].' 
                                         <br> <strong>Publicação: </strong>'.$n['dat'].'
                                         <br> <a class="p-0 nav-link text-center" href="../news.php?n='.$n['idnoticia'].'#comments" title="Ver os comentários desta postagem">
                                         <strong>Comentários <i class="fa fa-comment fa-sm"></i></strong></a>');
@@ -235,20 +235,20 @@
         <div class="row">
                 <div class="col-sm-4 col-footer">
                     <a href="index.php">
-                        <img src="../images/logotipo.png" class="img-responsive"> Tribuna Direta
+                        <img src="../images/logotipo.jpeg" class="img-responsive"> Raio-X
                     </a>
                 </div>
-                <div class="col-sm-4 col-footer"><a href="#" target="_blank" title="Página oficial no Facebook" alt="Link externo que redireciona a pagina oficial no Facebook do BlogDeNoticias"><i class="fab fa-facebook fa-lg"></i> Blog de Notícias</a>
+                <div class="col-sm-4 col-footer"><a href="#" target="_blank" title="Página oficial no Facebook" alt="Link externo que redireciona a pagina oficial no Facebook do Raio-X"><i class="fab fa-facebook fa-lg"></i> Raio-X</a>
                 </div>
-                <div class="col-sm-4 col-footer"><a href="mailto:contato@blogdenoticias.com" target="_blank" title="E-mail para contato" alt="Link externo que aciona a ação de enviar e-mail">
-                    <i class="fa fa-envelope fa-lg"></i>contato@blogdenoticias.com</a>
+                <div class="col-sm-4 col-footer"><a href="mailto:contato@raio-x.com" target="_blank" title="E-mail para contato" alt="Link externo que aciona a ação de enviar e-mail">
+                    <i class="fa fa-envelope fa-lg"></i>contato@raiox.com</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-footer"><a href="callto:+5511912345678" target="_blank" title="WhatsApp para contato" alt="Link externo que aciona a ação de adicionar contato">
                     <i class="fab fa-whatsapp-square fa-lg"></i>+55 11 91234-5678</a></div>
-                <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do BlogDeNoticias">
-                    <i class="fab fa-youtube fa-lg"></i>/blogdenoticias</a>
+                <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do Raio-X">
+                    <i class="fab fa-youtube fa-lg"></i>/Raio-X</a>
                 </div>
                 <div class="col-sm-4 col-footer">Newsletter - Saiba de cada postagem nova no blog:
                     <form class="form-inline newsletter" action="#">
@@ -260,7 +260,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 ml-5 "></div>
-                <div class="col-sm-3"><span class="copyright">Tribuna Direta, a notícia do jeito certo, 2019.
+                <div class="col-sm-3"><span class="copyright">Raio-X, a verdade sobre o sistema prisional brasileiro, 2019.
                     <i class="fa fa-copyright fa-lg"></i></span></div>
             </div>
         </footer>

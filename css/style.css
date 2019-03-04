@@ -10,10 +10,12 @@ width:100%;
 .form-login{
     position: relative;
     float: left;
+    background-image: url("../images/background-login.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
     width: 450px;
     min-height: 300px;
-    background-color: #ffffff;
-    border: 2px solid #dbdbdb;
+    border: 2px solid #000;
     border-radius: 5px;
     margin-top: 10%;
     margin-left: 85%;
@@ -24,8 +26,8 @@ width:100%;
     font-size: 18px;
     width: 100%;
     height: 60px;
-    background-color: #dbdbdb;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-weight: 500;
     padding-left: 5%;
     padding-top: 3.5%;
@@ -56,14 +58,14 @@ footer{
     position: relative;
     float: left;
     padding: 1%;
-    background-color: #dbdbdb;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-weight: 500;
 }
 
 footer a{
     text-decoration-line: none;
-    color: #000;
+    color: #fff;
     margin-left: -0.2%;
 }
 
@@ -111,8 +113,8 @@ footer a:hover{
 }
 
 .col-footer img{
-    width: 36px;
-    height: 36px;
+    width: 64px;
+    height: 32px;
 }
 
 .copyright{
@@ -149,9 +151,9 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .min-height-486{
-    min-height: 486px;
+    min-height: 485px;
 }
-/* IMAGES DE FUNDO DOS TEMAS */
+/* IMAGES DE FUNDO DOS estadoS */
 
 #arquivosdox{
     background-image: url("../images/grades.jpeg");

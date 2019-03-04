@@ -16,6 +16,20 @@
         return "";
     }
 
+    function validarEstado($estado){
+        if (strlen($estado) != 2){
+            return "Selecione um estado.";
+        }
+        return "";
+    }
+
+    function validarUnidade($unidade){
+        if (strlen($unidade) < 2){
+            return "Insira uma unidade válida. ";
+        }
+        return "";
+    }
+
     function validarYouTube($link){
         if (strlen($link) < 21){
             return "Insira um link do YouTube válido.";
@@ -30,6 +44,14 @@
         }
         $retorno .= validarResumo($post['resumo']);
         if (strlen(validarResumo($post['resumo'])) > 0){
+            $retorno .= '<br>';
+        }
+        $retorno .= validarEstado($post['estado']);
+        if (strlen(validarEstado($post['estado'])) > 0){
+            $retorno .= '<br>';
+        }
+        $retorno .= validarUnidade($post['unidade']);
+        if (strlen(validarUnidade($post['unidade'])) > 0){
             $retorno .= '<br>';
         }
         $retorno .= validarYouTube($post['video']);
@@ -101,14 +123,14 @@
     }
 
     function notificarNovoPost($post){
-        $assunto = "Tribuna Direta - Confira a nova postagem no nosso blog";
+        $assunto = "Raio-X - Confira a nova postagem no nosso blog";
         $mensagem = "<h4>Esta é uma mensagem automática, não a responda.</h4>";
         $mensagem .= "<br>Olá! Confira a nova postagem feita no nosso blog: <br>";
         $mensagem .= "<h4>".$post['titulo']."</h4>";
         $mensagem .= "<br>".$post['resumo'];
-        $mensagem .= '<a href="http://growupweb.com.br/blogdenoticias/news.php?n='.$post['id'].'>Clique aqui para acessar a notícia</a>';
+        $mensagem .= '<a href="http://growupweb.com.br/Raio-X/news.php?n='.$post['id'].'>Clique aqui para acessar a notícia</a>';
         $mensagem .= "<br> Caso não esteja conseguindo clicar no link, copie e cole o seguinte endereço no seu navegador:";
-        $mensagem .= "http://growupweb.com.br/blogdenoticias/news.php?=".$post['id'];
+        $mensagem .= "http://growupweb.com.br/Raio-X/news.php?=".$post['id'];
         $assinantes = select('assinante','ativo = 1');
         
         foreach ($assinantes as $a){
