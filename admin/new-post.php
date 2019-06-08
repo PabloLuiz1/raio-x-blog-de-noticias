@@ -78,10 +78,7 @@
                             <img src="../images/logo.jpeg" class="img-responsive">
                         </a>
                     </figure>
-                    <form class="form-inline pull-right" action="/action_page.php">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar notícias" required>
-                        <button class="btn btn-primary font-weight-bold" type="submit">Pesquisar <i class="fa fa-search fa-sm"></i></button>
-                    </form>
+                    
             </nav>
         </header>
             <div class="col-md-11 float-left mt-2 ml-5">
@@ -94,34 +91,34 @@
                         <textarea rows="3" class="form-control" id="resumo" name="resumo" placeholder="Insira um breve resumo sobre a postagem" required></textarea>
                         <label for="estado">Estado: </label>
                         <select id="estado" name="estado" class="form-control" required>
-                            "">Selecione</option>
-                            "AC">Acre</option>
-                            "AL">Alagoas</option>
-                            "AP">Amapá</option>
-                            "AM">Amazonas</option>
-                            "BA">Bahia</option>
-                            "CE">Ceará</option>
-                            "DF">Distrito Federal</option>
-                            "ES">Espírito Santo</option>
-                            "GO">Goiás</option>
-                            "MA">Maranhão</option>
-                            "MT">Mato Grosso</option>
-                            "MS">Mato Grosso do Sul</option>
-                            "MG">Minas Gerais</option>
-                            "PA">Pará</option>
-                            "PB">Paraíba</option>
-                            "PR">Paraná</option>
-                            "PE">Pernambuco</option>
-                            "PI">Piauí</option>
-                            "RJ">Rio de Janeiro</option>
-                            "RN">Rio Grande do Norte</option>
-                            "RS">Rio Grande do Sul</option>
-                            "RO">Rondônia</option>
-                            "RR">Roraima</option>
-                            "SC">Santa Catarina</option>
-                            "SP">São Paulo</option>
-                            "SE">Sergipe</option>
-                            "TO">Tocantins</option>
+                        <option value="">Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
                         </select>
                         <label for="unidade">Unidade: </label>
                         <input type="text" class="form-control" id="unidade" name="unidade" placeholder="Insira o nome da unidade" required>
@@ -147,8 +144,8 @@
             <?php 
                 if (strlen($cadastrou) > 0 && isset($_POST['postar'])){
                     echo ("<script> 
-                    $('erro').classList.remove('d-none');
-                    $('erro').classList.add('d-block');
+                    document.getElementById('erro').classList.remove('d-none');
+                    document.getElementById('erro').classList.add('d-block');
                     </script>");
                 }
                 if (strlen($cadastrou) == 0 && isset($_POST['postar'])){
@@ -179,10 +176,7 @@
                 <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do Raio-X">
                     <i class="fab fa-youtube fa-lg"></i>/Raio-X</a>
                 </div>
-                <div class="col-sm-4 col-footer">Newsletter - Saiba de cada postagem nova no blog:
-                    <form class="form-inline newsletter" action="#">
-                    <input class="form-control form-control-sm col-sm-6 mr-sm-4" type="text" placeholder="E-mail" required>
-                    <button class="btn btn-sm btn-success" type="submit">Assinar</button>
+                <div class="col-sm-4 col-footer">
                 </div>
             </div>
             <div class="row">

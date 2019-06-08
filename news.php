@@ -36,27 +36,9 @@
                         'TO' => selectQtdPorEstado('TO')['total']
                 );
 
-    if(isset($_POST['comentar'])){
-        $comentario = array(
-            'noticia' => $_GET['n'],
-            'comentario' => $_POST['comentario'],
-            'nome' => $_POST['nome'],
-            'data_publicacao' => date('Y-m-d H:i:s')
-        );
-        if (insert('comentarios',$comentario)){
-            echo ("<script> alert ('Comentário publicado com sucesso.'); 
-            location = location;
-            </script>");
-        }
-        else{
-            echo ("<script> alert ('Erro ao publicar o comentário.'); 
-            </script>");
-        }
-    }
 
     if (isset($_GET['n'])){
         $noticia = selectNoticia('tbnoticia.ativo = 1 AND tbnoticia.id = '.$_GET['n']);
-        $comentarios = select('comentarios','ativo = 1 AND noticia = '.$_GET['n']);
         foreach ($noticia as $n){
             $datapublicacao = $n['dat'];
             $titulo = $n['titulo'];
@@ -73,6 +55,27 @@
     $mes;
     if (isset($_GET['e'])){
         $noticias = selectNoticiasPorEstado($_GET['e']);
+    }
+
+    if (isset($_GET['u'])){
+        $noticias = selectNoticia('tbnoticia.ativo = 1 AND tbusuario.id = '.$_GET['u']);
+        $autorArray = select('usuario', 'id = '.$_GET['u']);
+        foreach ($autorArray as $a){
+            $autor = $a['nome'];
+        }
+        if ($noticias){
+            foreach ($noticias as $n){
+                $datapublicacao = $n['dat'];
+                $titulo = $n['titulo'];
+                $resumo = $n['resumo'];
+                $estado = $n['estado'];
+                $unidade = $n['unidade'];
+                $imagem = $n['imagem'];
+                $arquivo = $n['arquivo'];
+                $video = $n['video'];
+                //$autor = $n['nomeusuario'];
+            }
+        }
     }
 
 ?>
@@ -97,23 +100,13 @@
                     <li class="nav-item ">
                     <a class="nav-link" href="index.php">Início</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="about.php">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contato</a>
-                    </li>
-                    
                 </ul>
                     <figure class="float-left p-0 mx-auto figure-header">
                         <a href="index.php">
                             <img src="images/logo.jpeg" class="img-responsive">
                         </a>
                     </figure>
-                    <form class="form-inline pull-right" action="/action_page.php">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar notícias" required>
-                    <button class="btn btn-primary font-weight-bold" type="submit">Pesquisar <i class="fa fa-search fa-sm"></i></button>
-                </form>
+                    
             </nav>
         </header>
                 <div class="col-md-8 float-left mt-2 ml-4 mr-3">
@@ -125,53 +118,8 @@
                         <iframe class="frame-video" width="560" height="315" src="'.$video.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <span class="calibri-12"><strong>Publicado por: </strong>'.$autor.'. <br><strong>Data da publicação:</strong> '.$datapublicacao.'
                         </span>');
-                        echo ('<div id="comments">
-                            <h4 class="mt-2 col-md-12 border-bottom border-secondary">Comentários: <i class="fa fa-comment fa-md"></i></h4>');
-                        if (!$comentarios){
-                            echo ('<div class="alert alert-light text-center">
-                                Seja o primeiro a comentar.
-                            </div>
-                            <hr>');
-                        }
-                        else{
-                            session_start();
-                            foreach ($comentarios as $c){
-                                if (isset($_SESSION['admin'])){
-                                    $deletar = '<a class="btn btn-danger btn-sm pull-right" href="delete-comment.php?c='.$c['id'].'"><i class="fa fa-trash-alt fa-lg"></i></a>';
-                                    echo ('<div class="card">
-                                    <div class="card-header"><span style="font-size: 32px;"><i class="fa fa-user-circle fa-lg"></i></span> '.$c['nome'].' <strong>comentou:</strong> </div>
-                                    <div class="card-body">'.$c['comentario'].'</div>
-                                    <div class="card-footer"><strong>Data:</strong> '.$c['dat'].' '.$deletar.' </div>
-                                    </div>
-                                    <br>');
-                                }
-                                else{
-                                    $deletar = "";
-                                    echo ('<div class="card">
-                                    <div class="card-header"><span style="font-size: 32px;"><i class="fa fa-user-circle fa-lg"></i></span> '.$c['nome'].' <strong>comentou:</strong> </div>
-                                    <div class="card-body">'.$c['comentario'].'</div>
-                                    <div class="card-footer"><strong>Data:</strong> '.$c['dat'].' '.$deletar.' </div>
-                                    </div>
-                                    <br>');
-                                }
-                            }
-                            echo ('<hr>');
-                        }
-                            echo ('<h5 class="col-md-12">Faça um comentário: </h5>
-                            <form class="form-postar" action="news.php?n='.$_GET['n'].'" method="POST">
-                                <div class="form-group col-md-6">
-                                    <label for="nome">Nome: </label>
-                                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Insira o seu nome" required>
-                                    <label for="comentario">Comentário: </label>
-                                    <textarea class="form-control mb-3" name="comentario" id="comentario" rows=3 placeholder="Insira o seu comentário" required></textarea>
-                                    <input type="submit" name="comentar" class="btn btn-success pull-right font-weight-bold mb-5" value="Comentar">
-                            </form>
-                        </div>');
                     }
                     if (isset($_GET['e'])){
-                        if (isset($_GET['t']))
-                            echo ('<h2 class="col-md-12 border-bottom border-secondary">'.$_GET['t'].' - Postagens de '.$mes.'/'.$_GET['a'].'</h2>');
-                        else
                             echo ('<h2 class="col-md-12 border-bottom border-secondary">Postagens do estado de '.$_GET['e'].'</h2>');
                         if (!$noticias){
                             echo ('Não há postagens neste estado.');
@@ -186,15 +134,39 @@
                                             echo ($n['titulo']);
                                         echo ('</a>');
                                         echo ('<strong>Estado: </strong> '.$n['estado'].'<br> <strong>Autor: </strong>'.$n['nomeusuario'].' 
-                                        <br> <strong>Publicação: </strong>'.$n['dat'].'
-                                        <br> <a class="p-0 nav-link text-center" href="news.php?n='.$n['idnoticia'].'#comments" title="Ver os comentários desta postagem">
-                                        <strong>Comentários <i class="fa fa-comment fa-sm"></i></strong></a>');
+                                        <br> <strong>Publicação: </strong>'.$n['dat'].'');
                                     echo ('</div>');
                                 echo ('</div>');
                             }
                             echo ('</ul>');
                         }   
                     }
+
+                    if (isset($_GET['u'])){
+                        echo ('<h2 class="col-md-12 border-bottom border-secondary">Notícias publicadas por '.$autor.' </h2>');
+                        echo ('<ul class="nav nav-pills">');
+                        if (!$noticias){
+                            echo ('<div class="col-md-4 float-left calibri-12">');
+                            echo ('Este usuário ainda não postou nada.');
+                            echo ('</div>');
+                        }
+                        else{
+                            foreach ($noticias as $n){
+                                echo ('<div class="col-md-4 float-left calibri-12">');
+                                    echo ('<div class="nav-item mb-5 p-0">');
+                                        echo ('<a class="nav-link text-center p-0r" href="../news.php?n='.$n['idnoticia'].'" title="Ver a postagem">');
+                                            echo ('<img class="img-fluid rounded" src="../uploaded/'.$n['imagem'].'">');
+                                            echo ($n['titulo']);
+                                        echo ('</a>');
+                                        echo ('<strong>Estado: </strong> '.$n['estado'].'<br> <strong>Autor: </strong>'.$n['nomeusuario'].' 
+                                        <br> <strong>Publicação: </strong>'.$n['dat'].'');
+                                    echo ('</div>');
+                                echo ('</div>');
+                            }
+                            echo ('</ul>');
+                        }
+                    }
+
                     ?>
                     </div>
                 </div>
@@ -292,10 +264,7 @@
                 <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do Raio-X">
                     <i class="fab fa-youtube fa-lg"></i>/Raio-X</a>
                 </div>
-                <div class="col-sm-4 col-footer">Newsletter - Saiba de cada postagem nova no blog:
-                    <form class="form-inline newsletter" action="#">
-                    <input class="form-control form-control-sm col-sm-6 mr-sm-4" type="text" placeholder="E-mail" required>
-                    <button class="btn btn-sm btn-success" type="submit">Assinar</button>
+                <div class="col-sm-4 col-footer">
                 </div>
             </div>
             <div class="row">

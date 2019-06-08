@@ -79,10 +79,7 @@
                             <img src="../images/logo.jpeg" class="img-responsive">
                         </a>
                     </figure>
-                    <form class="form-inline pull-right" action="/action_page.php">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar notícias" required>
-                        <button class="btn btn-primary font-weight-bold" type="submit">Pesquisar <i class="fa fa-search fa-sm"></i></button>
-                    </form>
+                    
             </nav>
         </header>
             <div class="col-md-6 float-left mt-2 ml-5 pr-0">
@@ -148,10 +145,7 @@
                 <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do Raio-X">
                     <i class="fab fa-youtube fa-lg"></i>/Raio-X</a>
                 </div>
-                <div class="col-sm-4 col-footer">Newsletter - Saiba de cada postagem nova no blog:
-                    <form class="form-inline newsletter" action="#">
-                    <input class="form-control form-control-sm col-sm-6 mr-sm-4" type="text" placeholder="E-mail" required>
-                    <button class="btn btn-sm btn-success" type="submit">Assinar</button>
+                <div class="col-sm-4 col-footer">
                 </div>
             </div>
             <div class="row">

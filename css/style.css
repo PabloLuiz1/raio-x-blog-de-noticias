@@ -80,7 +80,7 @@ footer a:hover{
     width: 230px;
     height: 77px;
     z-index: 0;
-    margin: 0%;
+    margin: 0 auto;
 }
 
 .figure-header a{

@@ -23,34 +23,12 @@
                     <li class="nav-item">
                     <a class="nav-link" href="index.php">Início</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Noticias
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="estados/arquivosdox/">Arquivos do X</a>
-                            <a class="dropdown-item" href="estados/lazer/">Lazer</a>
-                            <a class="dropdown-item" href="estados/politica/">Política</a>
-                            <a class="dropdown-item" href="estados/saude/">Saúde</a>
-                            <a class="dropdown-item" href="estados/mundo/">Mundo</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="about.php">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contato</a>
-                    </li>
                 </ul>
                     <figure class="float-left p-0 mx-auto figure-header">
                         <a href="index.php">
                             <img src="images/logo.jpeg" class="img-responsive">
                         </a>
                     </figure>
-                    <form class="form-inline pull-right" action="/action_page.php">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar notícias" required>
-                    <button class="btn btn-primary font-weight-bold" type="submit">Pesquisar <i class="fa fa-search fa-sm"></i></button>
-                </form>
             </nav>
             </nav>
         </header>
@@ -61,7 +39,6 @@
                     <div class="title-form-login">
                         Redefinir senha
                     </div>
-                    <div class="font-weight-bold ml-4">Informe seu e-mail: </div>
                     <div class="form-group" style="padding-left: 20%; padding-right: 20%; padding-top: 5%;">
                         <div class="input-group mb-1">
                             <div class="input-group-prepend">
@@ -98,10 +75,7 @@
                 <div class="col-sm-4 col-footer"> <a href="#" target="_blank" title="Canal no YouTube" alt="Link externo que redireciona ao canal do YouTube do Raio-X">
                     <i class="fab fa-youtube fa-lg"></i>/Raio-X</a>
                 </div>
-                <div class="col-sm-4 col-footer">Newsletter - Saiba de cada postagem nova no blog:
-                    <form class="form-inline newsletter" action="#">
-                    <input class="form-control form-control-sm col-sm-6 mr-sm-4" type="text" placeholder="E-mail" required>
-                    <button class="btn btn-sm btn-success" type="submit">Assinar</button>
+                <div class="col-sm-4 col-footer">
                 </div>
             </div>
             <div class="row">
